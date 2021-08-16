@@ -1,0 +1,30 @@
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  padding: 1em;
+  border-top: solid;
+  justify-content: center;
+  display: flex;
+}
+
+.image {
+  width: 20%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.description {
+  width: 80%;
+}
+
+.name {
+}
+
+.price {
+}
+
+.quantity {
+}

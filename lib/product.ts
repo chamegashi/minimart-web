@@ -1,3 +1,4 @@
+import internal from "stream";
 import { graphqlRequest } from "./graphqlClient";
 
 export type Product = {
@@ -6,6 +7,11 @@ export type Product = {
   price: number;
   description: string;
   imageUrl: string;
+};
+
+export type CartIndex = {
+  product: Product;
+  quantity: number;
 };
 
 const listProductsQuery = `
@@ -20,7 +26,27 @@ const listProductsQuery = `
   }
 `;
 
+const getProductQuery = `
+  query getProduct($id: ID!) {
+    product(id: $id) {
+      id
+      name
+      description
+      price
+      imageUrl
+    }
+  }
+`;
+
 export async function listProducts(): Promise<Product[]> {
   const data = await graphqlRequest({ query: listProductsQuery });
   return data.products;
+}
+
+export async function getProduct(productId: String): Promise<Product> {
+  const data = await graphqlRequest({
+    query: getProductQuery,
+    variables: { id: productId },
+  });
+  return data.product;
 }

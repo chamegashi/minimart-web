@@ -1,11 +1,13 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
+
 import styles from "./Layout.module.css";
+import { CartIndex } from "../lib/product";
 
-type Props = {};
+type Props = { cartNumber: number };
 
-export const Layout: FC<Props> = ({ children }) => {
+export const Layout: FC<Props> = ({ children, cartNumber }) => {
   return (
     <div>
       <Head>
@@ -20,7 +22,7 @@ export const Layout: FC<Props> = ({ children }) => {
           <Link href="/cart">
             <a>
               <span>🛒</span>
-              <span className={styles.cartCount}>({/* ここにカートに入っているアイテム数を入れる */})</span>
+              <span className={styles.cartCount}>{cartNumber}</span>
             </a>
           </Link>
         </div>
