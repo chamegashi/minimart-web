@@ -1,23 +1,3 @@
-.list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: 0;
-  padding: 0;
-}
-
-.list::after {
-  content: "";
-  display: block;
-  width: 30%;
-}
-
-.listItem {
-  width: 30%;
-  color: gray;
-}
-
 .imageWrapper {
   position: relative;
 }
@@ -29,15 +9,20 @@
 }
 
 .price {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
+  margin-left: 0.5em;
 }
 
 .productName {
-  margin-bottom: 12px;
-  font-size: 14px;
+  margin-left: 0.5em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.description {
+  margin: 1em;
+}
+
+.buttonDiv {
+  text-align: center;
+  margin-bottom: 2em;
 }

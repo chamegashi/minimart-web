@@ -41,7 +41,7 @@ const CartPage: FC = () => {
           <li key={cartIndex.product.id} className={styles.item}>
             <img className={styles.image} src={cartIndex.product.imageUrl} alt={`${cartIndex.product.name}の写真`} />
             <div className={styles.description}>
-              <p className={styles.name}>{cartIndex.product.name}</p>
+              <p className={styles.productName}>{cartIndex.product.name}</p>
               <p className={styles.price}>{cartIndex.product.price}円</p>
               <p className={styles.quantity}>{cartIndex.quantity}個</p>
             </div>
@@ -49,11 +49,15 @@ const CartPage: FC = () => {
         ))}
       </ul>
 
-      <p>合計金額 {totalPrice}</p>
+      <div>
+        <p className={styles.totalPriceDiv}>合計金額 {totalPrice}</p>
+      </div>
 
-      <Link href={`/`}>
-        <button onClick={resetCart}>注文確定！</button>
-      </Link>
+      <div className={styles.buttonDiv}>
+        <Link href={`/`}>
+          <button onClick={resetCart}>注文確定！</button>
+        </Link>
+      </div>
     </Layout>
   );
 };

@@ -22,7 +22,7 @@ const ProductPage: FC = () => {
   }, []);
 
   const addCart = () => {
-    let cartJson: string = "";
+    let cartJson: string | null = null;
     if (localStorage.getItem("cart")) {
       cartJson = localStorage.getItem("cart");
     }
@@ -68,10 +68,14 @@ const ProductPage: FC = () => {
   return (
     <Layout cartNumber={cartNumber}>
       <img className={styles.image} src={product?.imageUrl} alt={`${product?.name}の写真`} />
-      <p>{product?.name}</p>
-      <p>{product?.price}</p>
-      <p>{product?.description}</p>
-      <button onClick={addCart}>カートに追加</button>
+      <p className={styles.productName}>{product?.name}</p>
+      <p className={styles.price}>{product?.price} 円</p>
+      <p className={styles.description}>{product?.description}</p>
+      <div className={styles.buttonDiv}>
+        <button onClick={addCart} className={styles.addCart}>
+          カートに追加
+        </button>
+      </div>
     </Layout>
   );
 };

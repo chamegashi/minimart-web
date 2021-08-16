@@ -5,26 +5,46 @@
 
 .item {
   padding: 1em;
-  border-top: solid;
+  border-bottom: solid;
   justify-content: center;
   display: flex;
 }
 
 .image {
-  width: 20%;
+  width: 40%;
   aspect-ratio: 1/1;
   object-fit: cover;
 }
 
 .description {
-  width: 80%;
+  width: 60%;
 }
 
-.name {
+.productName {
+  margin-left: 1em;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 .price {
+  margin-left: 1em;
 }
 
 .quantity {
+  margin-left: 1em;
+}
+
+.buttonDiv {
+  text-align: center;
+}
+
+.totalPrice {
+  margin-left: 1em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.totalPriceDiv {
+  text-align: right;
+  margin: 1em;
 }
